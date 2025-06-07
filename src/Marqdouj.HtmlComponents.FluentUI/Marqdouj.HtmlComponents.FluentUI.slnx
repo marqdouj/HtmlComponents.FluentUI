@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Marqdouj.HtmlComponents.FluentUI/Marqdouj.HtmlComponents.FluentUI.csproj" />
+  <Project Path="Sandbox/Sandbox.Client/Sandbox.Client.csproj" />
+  <Project Path="Sandbox/Sandbox/Sandbox.csproj" />
+</Solution>
