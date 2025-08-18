@@ -18,6 +18,9 @@
   - **ThemeColor**: Component for selecting theme color.
 
 ## Release Notes
+**8.0.1**
+- Updated NuGet pkgs
+
 **8.0.0**
 - Added ColorPicker component
 - Added Theme components
