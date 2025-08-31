@@ -18,6 +18,9 @@
   - **ThemeColor**: Component for selecting theme color.
 
 ## Release Notes
+**8.0.3**
+- `ColorPicker`. Added option to dilsplay the selected color adjacent to the control
+
 **8.0.2**
 - Updated NuGet pkgs
 

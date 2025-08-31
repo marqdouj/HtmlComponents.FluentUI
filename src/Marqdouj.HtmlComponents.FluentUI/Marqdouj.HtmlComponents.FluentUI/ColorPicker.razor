@@ -1,45 +1,58 @@
-﻿<FluentSelect TOption="HtmlColorNameListItem"
-              Id="@id"
-              Items="@names.Items"
-              Value="@Value"
-              ValueChanged="@OnValueChanged"
-              Appearance="@options.Appearance"
-              AriaLabel="@options.AriaLabel"
-              Autofocus="@options.Autofocus"
-              ChangeOnEnterOnly="@options.ChangeOnEnterOnly"
-              Class="@options.Class"
-              Disabled="@options.Disabled"
-              DisplayName="@options.DisplayName"
-              Embedded="@options.Embedded"
-              Height="@options.Height"
-              Immediate="@options.Immediate"
-              ImmediateDelay="@options.ImmediateDelay"
-              Label="@options.Label"
-              Name="@options.Name"
-              Open="@options.Open"
-              OptionText="@(i => i.Name)"
-              OptionValue="@(i => i.Name)"
-              Placeholder="@options.Placeholder"
-              Position="@options.Position"
-              ReadOnly="@options.ReadOnly"
-              Required="@options.Required"
-              Style="@options.Style"
-              Width="@options.Width">
-    <OptionTemplate>
-        <FluentStack>
-            @if (context.Value.HasValue)
-            {
-                <div style="@($"height:1rem;width:1rem;border: solid 1px black;background-color:{context?.Hex ?? "Transparent"};")" />
-            }
-            <FluentLabel>@context?.Name</FluentLabel>
-        </FluentStack>
-    </OptionTemplate>
-</FluentSelect>
+﻿<FluentStack VerticalAlignment="VerticalAlignment.Center">
+    @if (Options?.SelectedColorPosition == SelectedColorPosition.Left)
+    {
+        <div style="@($"height:1.25rem;width:1.25rem;border: solid 1px black;background-color:{selectedColor};")" />
+    }
+
+    <FluentSelect TOption="HtmlColorNameListItem"
+                  Id="@id"
+                  Items="@names.Items"
+                  Value="@Value"
+                  ValueChanged="@OnValueChanged"
+                  Appearance="@options.Appearance"
+                  AriaLabel="@options.AriaLabel"
+                  Autofocus="@options.Autofocus"
+                  ChangeOnEnterOnly="@options.ChangeOnEnterOnly"
+                  Class="@options.Class"
+                  Disabled="@options.Disabled"
+                  DisplayName="@options.DisplayName"
+                  Embedded="@options.Embedded"
+                  Height="@options.Height"
+                  Immediate="@options.Immediate"
+                  ImmediateDelay="@options.ImmediateDelay"
+                  Label="@options.Label"
+                  Name="@options.Name"
+                  Open="@options.Open"
+                  OptionText="@(i => i.Name)"
+                  OptionValue="@(i => i.Name)"
+                  Placeholder="@options.Placeholder"
+                  Position="@options.Position"
+                  ReadOnly="@options.ReadOnly"
+                  Required="@options.Required"
+                  Style="@options.Style"
+                  Width="@options.Width">
+        <OptionTemplate>
+            <FluentStack>
+                @if (context.Value.HasValue)
+                {
+                    <div style="@($"height:1rem;width:1rem;border: solid 1px black;background-color:{context?.Hex ?? "Transparent"};")" />
+                }
+                <FluentLabel>@context?.Name</FluentLabel>
+            </FluentStack>
+        </OptionTemplate>
+    </FluentSelect>
+
+    @if (Options?.SelectedColorPosition == SelectedColorPosition.Right)
+    {
+        <div style="@($"height:1.25rem;width:1.25rem;border: solid 1px black;background-color:{selectedColor};")" />
+    }
+</FluentStack>
 
 @code {
     private readonly HtmlColorNameCollection names = new(true);
     private ColorPickerOptions options = new();
     private string id = Guid.NewGuid().ToCssId();
+    private string selectedColor => string.IsNullOrWhiteSpace(Value) ? "Transparent" : Value;
 
     [Parameter]
     public string? Id { get; set; }

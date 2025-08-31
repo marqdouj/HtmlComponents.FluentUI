@@ -3,6 +3,16 @@
 namespace Marqdouj.HtmlComponents.FluentUI
 {
     /// <summary>
+    /// Flag to display the color adjacent to the control
+    /// </summary>
+    public enum SelectedColorPosition
+    {
+        None,
+        Left,
+        Right,
+    }
+
+    /// <summary>
     /// <see Based on: cref="https://www.fluentui-blazor.net/Combobox"/>
     /// </summary>
     public class ColorPickerOptions
@@ -87,6 +97,11 @@ namespace Marqdouj.HtmlComponents.FluentUI
         /// <see cref="FluentSelect{TOption}.Position"/>
         /// </summary>
         public SelectPosition Position { get; set; } = SelectPosition.Below;
+
+        /// <summary>
+        /// <see cref="FluentUI.SelectedColorPosition"/>
+        /// </summary>
+        public SelectedColorPosition SelectedColorPosition { get; set; }
 
         /// <summary>
         /// <see cref="FluentInputBase{TValue}.ReadOnly"/>
