@@ -4,7 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Version>8.0.3</Version>
+    <Version>8.0.4</Version>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>Custom FluentUI Blazor Components</Title>
     <PackageProjectUrl>https://github.com/marqdouj/HtmlComponents.FluentUI</PackageProjectUrl>
@@ -24,13 +24,9 @@
 
   <ItemGroup>
 	<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.19" />
-	<PackageReference Include="Marqdouj.HtmlCommon" Version="8.0.4" />
+	<PackageReference Include="Marqdouj.HtmlCommon" Version="8.1.0" />
     <PackageReference Include="Microsoft.FluentUI.AspNetCore.Components" Version="4.12.1" />
     <PackageReference Include="Microsoft.FluentUI.AspNetCore.Components.Icons" Version="4.12.1" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <Folder Include="wwwroot\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -42,6 +38,10 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 
 </Project>
