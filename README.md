@@ -16,10 +16,18 @@
   - **ThemeSwitch**: Component for toggling between light and dark themes.
   - **ThemeMode**: Component for selecting between system, light, and dark themes.
   - **ThemeColor**: Component for selecting theme color.
+- **UIInput**. Components for user input that support binding to [`IUIModelValue`](https://github.com/marqdouj/HtmlComponents/tree/master/src/Marqdouj.HtmlComponents/Marqdouj.HtmlComponents/UI).
+  - `UIColor`: Select from a list of HtmlColors (list of items is customizable).
+  - `UISelect`: Select a value from a list (list of items is customizable).
+  - `UIText`: Supports string, double, int32, and int64 binding.
+  - `UIValuesGrid`: Displays the UIModel values as a grid.
 
 ## Release Notes
+**8.1.0**
+- `UIInput`. Added components.
+
 **8.0.4**
--  Update NuGet packages.
+- Update NuGet packages.
 
 **8.0.3**
 - `ColorPicker`. Added option to dilsplay the selected color adjacent to the control

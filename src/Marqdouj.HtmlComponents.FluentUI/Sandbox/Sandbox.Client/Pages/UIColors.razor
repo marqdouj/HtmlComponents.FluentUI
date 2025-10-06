@@ -1,0 +1,15 @@
+﻿<FluentCard AreaRestricted="false">
+	<FluentGrid>
+		<FluentGridItem>
+			<UIColor Model="@Model?.Color" />
+		</FluentGridItem>
+		<FluentGridItem>
+			<UIColor Model="@Model?.Color2" />
+		</FluentGridItem>
+	</FluentGrid>
+</FluentCard>
+
+@code {
+	[CascadingParameter]
+	public UIInputModel? Model { get; set; }
+}

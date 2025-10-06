@@ -1,0 +1,30 @@
+﻿<FluentCard AreaRestricted="false">
+    <FluentGrid>
+        <FluentGridItem>
+            <UIText Model="@Model?.StringValue" />
+        </FluentGridItem>
+
+        <FluentGridItem>
+            <UIText Model="@Model?.DoubleValue" FieldType="TextFieldType.Number" />
+        </FluentGridItem>
+        <FluentGridItem>
+            <UIText Model="@Model?.DoubleValueN" FieldType="TextFieldType.Number" />
+        </FluentGridItem>
+
+        <FluentGridItem>
+            <UIText Model="@Model?.IntValue" FieldType="TextFieldType.Number" />
+        </FluentGridItem>
+        <FluentGridItem>
+            <UIText Model="@Model?.IntValueN" FieldType="TextFieldType.Number" />
+        </FluentGridItem>
+
+        <FluentGridItem xs="6">
+            <UIText Model="@Model?.Url" FieldType="TextFieldType.Url" Style="width:100%"/>
+        </FluentGridItem>
+    </FluentGrid>
+</FluentCard>
+
+@code {
+    [CascadingParameter]
+    public UIInputModel? Model { get; set; }
+}

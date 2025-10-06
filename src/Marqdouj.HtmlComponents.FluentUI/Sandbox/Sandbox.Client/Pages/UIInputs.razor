@@ -1,0 +1,54 @@
+﻿@page "/ui-inputs"
+@rendermode InteractiveServer
+
+<PageTitle>UIValue Input</PageTitle>
+
+<FluentLayout>
+	<FluentHeader>
+		UIValue Input Controls
+	</FluentHeader>
+
+	<FluentLabel Typo="Typography.Subject">
+		FluentUI demo on the use of the UIModel input classes from the 
+		<a href="https://github.com/marqdouj/HtmlComponents/tree/master/src/Marqdouj.HtmlComponents/Marqdouj.HtmlComponents/UI" target="_blank">HtmlComponents</a> 
+		library.
+	</FluentLabel>
+
+	<FluentLabel Typo="Typography.Subject">
+		Ensure you configure the
+		<a href="https://www.fluentui-blazor.net/Tooltip" target="_blank">FluentTooltipProvider</a>
+		in MainLayout.
+	</FluentLabel>
+
+	<br />
+
+	<CascadingValue Value="@model">
+		<FluentTabs OnTabChange="@OnTabChanged">
+			<FluentTab Label="Color Input">
+				<UIColors />
+			</FluentTab>
+
+			<FluentTab Label="Select Input">
+				<UISelects />
+			</FluentTab>
+
+			<FluentTab Label="Text Input">
+				<UITexts />
+			</FluentTab>
+
+			<FluentTab Label="Grid View">
+				<UIValues />
+			</FluentTab>
+		</FluentTabs>
+	</CascadingValue>
+
+</FluentLayout>
+
+@code {
+	private readonly UIInputModel model = new(){Source = new()};
+
+	private void OnTabChanged(FluentTab tab)
+	{
+		StateHasChanged();
+	}
+}

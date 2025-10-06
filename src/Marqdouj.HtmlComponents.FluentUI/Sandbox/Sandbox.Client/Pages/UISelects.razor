@@ -1,0 +1,27 @@
+﻿<FluentCard AreaRestricted="false">
+	<FluentGrid>
+		<FluentGridItem>
+            <UISelect Model="@Model?.EnumValue" Items="@enumsN" />
+		</FluentGridItem>
+		<FluentGridItem>
+            <UISelect Model="@Model?.EnumValue2" Items="@enums" />
+		</FluentGridItem>
+
+		<FluentGridItem>
+            <UISelect Model="@Model?.Flag" Items="@boolsN" />
+		</FluentGridItem>
+		<FluentGridItem>
+            <UISelect Model="@Model?.Flag2" Items="@bools" />
+		</FluentGridItem>
+	</FluentGrid>
+</FluentCard>
+
+@code {
+    private List<Option<string?>> bools = Input.GetBoolLookup(false);
+    private List<Option<string?>> boolsN = Input.GetBoolLookup(true);
+    private List<Option<string>> enums = Input.GetEnumLookup<DemoEnum>(false);
+    private List<Option<string>> enumsN = Input.GetEnumLookup<DemoEnum>(true);
+
+    [CascadingParameter]
+    public UIInputModel? Model { get; set; }
+}

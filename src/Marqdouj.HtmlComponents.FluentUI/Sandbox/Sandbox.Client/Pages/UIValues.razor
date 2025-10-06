@@ -1,0 +1,12 @@
+﻿<FluentCard AreaRestricted="false">
+    <FluentGrid>
+        <FluentGridItem>
+            <UIValuesGrid Items="@Model?.ToUIList()" />
+        </FluentGridItem>
+    </FluentGrid>
+</FluentCard>
+
+@code {
+    [CascadingParameter]
+    public UIInputModel? Model { get; set; }
+}
